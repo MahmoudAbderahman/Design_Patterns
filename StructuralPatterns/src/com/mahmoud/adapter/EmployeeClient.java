@@ -14,6 +14,13 @@ public class EmployeeClient {
 		// will not work! This is where the adapter comes into play!
 		// Employee employeeFromLdap = new EmployeeLdap("7oda", "Mahmoud", "Abdelrahman", "mahmoud@abdelrahman.com");
 		
+		EmployeeLdap employeeFromLdap = new EmployeeLdap("7oda", "Mahmoud", "Abdelrahman", "mahmoud@abdelrahman.com");
+		employees.add(new EmployeeLdapAdapter(employeeFromLdap));
+		
+		EmployeeCSV employeeFromCSV = new EmployeeCSV("123,Mahmoud,Abdelrahman,mahmoud@abdelrahman.com");
+		
+		employees.add(new EmployeeAdapterCSV(employeeFromCSV));
+		
 		return employees;
 	}
 }
